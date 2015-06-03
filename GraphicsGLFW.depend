@@ -1,0 +1,138 @@
+# depslib dependency file v1.0
+1433300877 source:e:\cbprojects\graphicsglfw\main.c
+	<GLFW/glfw3.h>
+	<stdlib.h>
+	<stdio.h>
+
+1433319751 source:e:\cbprojects\graphicsglfw\app\appdelegate.cpp
+	"AppDelegate.h"
+	<gl/glew.h>
+	<stdio.h>
+	<glm/glm.hpp>
+
+1433308934 e:\cbprojects\graphicsglfw\app\appdelegate.h
+	"OpenGLViewController.h"
+	"../event/MouseEvent.h"
+
+1433310204 e:\cbprojects\graphicsglfw\app\openglviewcontroller.h
+	"../common/type.h"
+	"../Graphics/CShader.h"
+	"../Graphics/CTexture.h"
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<assimp/Importer.hpp>
+	<assimp/scene.h>
+	<assimp/postprocess.h>
+	"../models/CModelParser.h"
+	"../event/MouseEvent.h"
+	"../math/Camera.h"
+
+1433087094 e:\cbprojects\graphicsglfw\event\mouseevent.h
+
+1433315454 source:e:\cbprojects\graphicsglfw\app\openglviewcontroller.cpp
+	"OpenGLViewController.h"
+	"../models/models.h"
+	<cstdio>
+	<cstdlib>
+	"../Graphics/CTexture.h"
+	"../models/CModelParser.h"
+	"../math/Camera.h"
+
+1433317810 source:e:\cbprojects\graphicsglfw\event\mouseevent.cpp
+	"MouseEvent.h"
+	<cstdio>
+
+1433321841 source:e:\cbprojects\graphicsglfw\main.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<stdio.h>
+	"event/MouseEvent.h"
+	"app/AppDelegate.h"
+
+1433087094 e:\cbprojects\graphicsglfw\common\type.h
+
+1433087094 e:\cbprojects\graphicsglfw\graphics\cshader.h
+	<gl/glew.h>
+	<vector>
+
+1433087094 e:\cbprojects\graphicsglfw\graphics\ctexture.h
+	<gl/glew.h>
+	"../Graphics/GraphicsCore.h"
+
+1433087094 e:\cbprojects\graphicsglfw\graphics\graphicscore.h
+	"../common/type.h"
+	"../buffer/iBuffer.h"
+
+1433087094 e:\cbprojects\graphicsglfw\buffer\ibuffer.h
+
+1433087094 e:\cbprojects\graphicsglfw\models\cmodelparser.h
+	<assimp/Importer.hpp>
+	<assimp/scene.h>
+	<assimp/postprocess.h>
+	<gl/glew.h>
+	<vector>
+
+1433087094 e:\cbprojects\graphicsglfw\math\camera.h
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1433087094 e:\cbprojects\graphicsglfw\models\models.h
+
+1433087094 source:e:\cbprojects\graphicsglfw\buffer\ibuffer.cpp
+	"iBuffer.h"
+	<stdio.h>
+	<string.h>
+
+1433087094 source:e:\cbprojects\graphicsglfw\graphics\cshader.cpp
+	<cassert>
+	<cstring>
+	<cstdio>
+	"CShader.h"
+	"../log/cmnlog.h"
+
+1433087094 e:\cbprojects\graphicsglfw\log\cmnlog.h
+
+1433321896 source:e:\cbprojects\graphicsglfw\graphics\ctexture.cpp
+	"CTexture.h"
+	<png.h>
+	<pngstruct.h>
+	<pnginfo.h>
+	<string.h>
+	"../buffer/iBuffer.h"
+
+1433087094 source:e:\cbprojects\graphicsglfw\graphics\graphicscore.cpp
+	"GraphicsCore.h"
+
+1433087094 source:e:\cbprojects\graphicsglfw\log\cmnlog.cpp
+	"cmnlog.h"
+	<cstdio>
+	<cstdlib>
+
+1433087094 source:e:\cbprojects\graphicsglfw\math\camera.cpp
+	"Camera.h"
+	<cstring>
+
+1433087094 source:e:\cbprojects\graphicsglfw\models\cmodelparser.cpp
+	"CModelParser.h"
+
+1433087094 source:e:\cbprojects\graphicsglfw\models\models.cpp
+	"models.h"
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<glm/glm.hpp>
+
+1433087094 source:e:\cbprojects\graphicsglfw\app\mouseevent.cpp
+	"MouseEvent.h"
+	<cstdio>
+
+1433087094 e:\cbprojects\graphicsglfw\app\mouseevent.h
+
+1433087094 source:e:\cbprojects\graphicsglfw\app\openglview.cpp
+	"OpenGLView.h"
+	<gl/freeglut.h>
+
+1433087094 e:\cbprojects\graphicsglfw\app\openglview.h
+	<gl/glew.h>
+	<glm/glm.hpp>
+
