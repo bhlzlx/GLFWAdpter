@@ -117,13 +117,16 @@ iTex * CreateTexFromImage(iImage * image,int autoMip)
     {
         case FMT_RGBA8888:
         {
-            glTexImage2D(GL_TEXTURE_2D,0,4,image->m_iWidth,image->m_iHeight,0,GL_RGBA,GL_UNSIGNED_BYTE,image->m_pData);
+            glTexStorage2D(GL_TEXTURE_2D,4,GL_RGBA8,image->m_iWidth,image->m_iHeight);
+            glTexSubImage2D(GL_TEXTURE_2D,0,0,0,image->m_iWidth,image->m_iHeight,GL_RGBA,GL_UNSIGNED_BYTE,image->m_pData);
+            //glTexImage2D(GL_TEXTURE_2D,0,4,image->m_iWidth,image->m_iHeight,0,GL_RGBA,GL_UNSIGNED_BYTE,image->m_pData);
             error = glGetError();
             break;
         }
         case FMT_RGB888:
         {
-            glTexImage2D(GL_TEXTURE_2D,0,3,image->m_iWidth,image->m_iHeight,0,GL_RGB,GL_UNSIGNED_BYTE,image->m_pData);
+            glTexStorage2D(GL_TEXTURE_2D,4,GL_RGB8,image->m_iWidth,image->m_iHeight);
+            glTexSubImage2D(GL_TEXTURE_2D,0,0,0,image->m_iWidth,image->m_iHeight,GL_RGB,GL_UNSIGNED_BYTE,image->m_pData);
             break;
         }
     }
