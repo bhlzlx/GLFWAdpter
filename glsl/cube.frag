@@ -50,9 +50,9 @@ void main()
 
     vec4 textureColor   = texture(TEXTURE00,frag_uv);
 
-    color = textureColor;
+   // color = textureColor;
 
-    /*
+
 
     vec4 tangentNormal  = texture(TEXTURE01,frag_uv);
     vec4 highLight      = texture(TEXTURE02,frag_uv);
@@ -75,15 +75,15 @@ void main()
 	for (int i=0;i<4;i++)
     {
 		 int index = int(16.0*random(floor(vertex_world*1000.0), i))%16;
-          visible -= 0.2*(1.0-texture( DEPTH_TEXTURE00, vec3(shadow_coord.xy + poissonDisk[index]/2500.0,shadow_coord.z-bias) ));
+          visible -= 0.2*(1.0-texture( DEPTH_TEXTURE00, vec3(shadow_coord.xy + poissonDisk[index]/5500.0,shadow_coord.z-bias) ));
 	}
+//    color = textureColor * frag_diff;
 
-*/
-    /*float visible = texture(DEPTH_TEXTURE00,shadow_coord.xyz);
-*/
+//    float visible = texture(DEPTH_TEXTURE00,shadow_coord.xyz);
+
     //visibility = texture( shadowMap, shadow_coord.xyz);
 
-   // color = (textureColor * frag_diff  + highLight * spec * 0.5 * frag_diff) * visible + textureColor * 0.6;
+    color = (textureColor * frag_diff  + highLight * spec * 0.5 * frag_diff) * visible + textureColor * 0.3;
     //color = textureColor * frag_diff ;// + highLight * spec * 0.5 * frag_diff) * visible + textureColor * 0.6;
     //color = vec4(1.0,1.0,1.0,1.0) * visible;
 }
