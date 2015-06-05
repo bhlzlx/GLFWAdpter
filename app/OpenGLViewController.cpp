@@ -18,18 +18,21 @@ using namespace common_model;
 
 void OpenGLViewController::OnInit()
 {
+    glEnable(GL_TEXTURE_2D);
+
     m_rotation = 0.0f;
 
 
     m_pCamera = new CCamera();
     m_lightPosition = vec4(0,250,175,1);
 
-    m_model = glm::scale(mat4(1.0f),vec3(0.25,0.25,0.25));
+    m_model = glm::scale(mat4(1.0f),vec3(0.125,0.125,0.125));
     // InitTexture
 
     iBuffer * pBuff = BufferFromFile("./textures/texture.png");
     iImage * image = ImageFromPNG(pBuff);
-    m_texture = CreateTexFromImage(image,1);
+    m_texture = CreateDefaultTexture(0);
+    //m_texture = CreateTexFromImage(image,1);
     image->Release();
     pBuff->Release();
 
@@ -98,8 +101,6 @@ void OpenGLViewController::OnInit()
    // m_templeModel.LoadModel("Temple.obj");
     m_templeModel.LoadModel("Temple.obj");
 
-        static vec4 initLightPos(0,250,175,1);
-    m_lightPosition = glm::rotate(mat4(1.0),m_lightRotation / 180 * 3.1415926f,vec3(0,1,0)) * initLightPos;
     m_view_light = lookAt(
             vec3(m_lightPosition.x,m_lightPosition.y,m_lightPosition.z),
             vec3(0,0,0),
@@ -118,7 +119,7 @@ void OpenGLViewController::OnTimer()
     m_model = glm::rotate(mat4(1.0),m_model_rotation / 180 * 3.1415926f,vec3(0,1,0));
 */
     m_lightRotation += 2;
-    static vec4 initLightPos(0,250,175,1);
+    static vec4 initLightPos(0,125,85,1);
     m_lightPosition = glm::rotate(mat4(1.0),m_lightRotation / 180 * 3.1415926f,vec3(0,1,0)) * initLightPos;
     m_view_light = lookAt(
             vec3(m_lightPosition.x,m_lightPosition.y,m_lightPosition.z),
@@ -181,7 +182,7 @@ void OpenGLViewController::OnUpdate()
 
     m_view = m_pCamera->GetMatrix();
     // ��Ⱦ��Դ����FBO
-   /* glBindFramebuffer(GL_FRAMEBUFFER,m_shadowFBO);
+    glBindFramebuffer(GL_FRAMEBUFFER,m_shadowFBO);
     glClearDepth(1.0f);
     glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
@@ -198,7 +199,7 @@ void OpenGLViewController::OnUpdate()
     m_pDepthShader->SetUniformData(&m_model[0][0],"MODEL");
     glViewport(0,0,(float)m_width * 2.0f,(float)m_height * 2.0f);
     m_templeModel.Render();
-*/
+
     // ��ȾĬ��FBO
     glBindFramebuffer(GL_FRAMEBUFFER,0);
     glClearColor(.5,.5,.5,1.0);
@@ -230,12 +231,12 @@ void OpenGLViewController::OnUpdate()
     m_pShader->SetUniformData(&m_model[0][0],"MODEL");
     m_templeModel.Render();
 
-/*
+
     glViewport(0,0,this->m_width/4,this->m_height/4);
     glClear(GL_DEPTH_BUFFER_BIT);
     m_pShader->SetUniformData(&m_view_light[0][0],"VIEW");
     m_templeModel.Render();
-    */
+
 }
 
 void OpenGLViewController::OnResize(unsigned width,unsigned height)
@@ -244,7 +245,7 @@ void OpenGLViewController::OnResize(unsigned width,unsigned height)
     m_height = height;
     glViewport(0, 0, width,height);
 
-    m_projection = perspective(45.0f,(float)width/(float)height,0.01f,500.0f);
+    m_projection = perspective(45.0f,(float)width/(float)height,0.01f,250.0f);
 
     if(glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE)
     {
